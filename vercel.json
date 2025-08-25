@@ -7,7 +7,7 @@
     },
     {
       "source": "/project/project.html",
-      "destination": "/project/project.html",
+      "destination": "/project",
       "permanent": true
     }
   ]
