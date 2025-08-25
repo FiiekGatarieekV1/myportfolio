@@ -4,6 +4,9 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
-    }
+      "source": "/project/project.html",
+      "destination": "/",
+      "permanent": true
+    } 
   ]
 }
