@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Saya</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: { 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca' }
+          },
+          container: { center: true, padding: '1rem' },
+          fontFamily: { display: ["Inter", "sans-serif"] }
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons & AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-900 dark:text-slate-200">
+
+  <!-- ===== HEADER ===== -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+    <div class="container max-w-7xl flex items-center justify-between py-3">
+      <a href="#" class="flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 text-white shadow-sm">
+          <i class="fa-solid fa-user"></i>
+        </span>
+        <div class="leading-tight">
+          <h1 class="text-base font-semibold">Portfolio Saya</h1>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Web Developer</p>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 dark:border-slate-600">
+          <i class="fa-solid fa-moon dark:hidden"></i>
+          <i class="fa-solid fa-sun hidden dark:inline"></i>
+        </button>
+
+        <button id="menuBtn" class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-300 text-slate-700 dark:text-slate-300 dark:border-slate-600">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <nav id="nav" class="hidden lg:block">
+        <ul class="flex flex-col lg:flex-row lg:items-center gap-2 lg:gap-6">
+          <li><a href="#about" class="block px-3 py-2 rounded-lg hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-slate-800">About</a></li>
+          <li><a href="#skills" class="block px-3 py-2 rounded-lg hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-slate-800">Skills</a></li>
+          <li><a href="#experience" class="block px-3 py-2 rounded-lg hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-slate-800">Experience</a></li>
+          <li><a href="#event" class="block px-3 py-2 rounded-lg hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-slate-800">Event</a></li>
+          <li><a href="#project" class="block px-3 py-2 rounded-lg hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-slate-800">Project</a></li>
+          <li><a href="#contact" class="block px-3 py-2 rounded-lg hover:text-primary-700 hover:bg-primary-50 dark:hover:bg-slate-800">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobileNav" class="lg:hidden hidden border-t border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700">
+      <div class="container max-w-7xl py-2">
+        <a href="#about" class="block px-3 py-2 hover:bg-primary-50 dark:hover:bg-slate-800">About</a>
+        <a href="#skills" class="block px-3 py-2 hover:bg-primary-50 dark:hover:bg-slate-800">Skills</a>
+        <a href="#experience" class="block px-3 py-2 hover:bg-primary-50 dark:hover:bg-slate-800">Experience</a>
+        <a href="#event" class="block px-3 py-2 hover:bg-primary-50 dark:hover:bg-slate-800">Event</a>
+        <a href="#project" class="block px-3 py-2 hover:bg-primary-50 dark:hover:bg-slate-800">Project</a>
+        <a href="#contact" class="block px-3 py-2 hover:bg-primary-50 dark:hover:bg-slate-800">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20 lg:pt-24">
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-[70vh] grid place-items-center overflow-hidden">
+  <div class="absolute inset-0 bg-[url('images/bg.png')] bg-cover bg-center"></div>
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <div class="relative z-10 container max-w-3xl text-center text-white" data-aos="fade-up">
+    <h2 class="text-4xl sm:text-5xl font-extrabold">
+      Halo, Saya <span class="text-primary-400">Fikli Asrizal M</span>
+    </h2>
+    <p class="mt-4 text-lg text-slate-200">
+      <span id="typed"></span>
+    </p>
+    <div class="mt-6 flex gap-4 justify-center">
+      <a href="#project" class="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-white shadow-lg hover:bg-primary-700">
+        <span>Lihat Karya</span><i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="cv.pdf" target="_blank" class="inline-flex items-center gap-2 rounded-xl border border-white/80 px-5 py-3 text-white hover:bg-white hover:text-primary-700 transition">
+        <i class="fa-solid fa-file"></i> Download CV
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-16 lg:py-24 bg-white dark:bg-slate-900" data-aos="fade-up">
+  <div class="container max-w-5xl">
+    <h3 class="text-3xl font-bold">Tentang Saya</h3>
+    <p class="mt-4 text-slate-600 dark:text-slate-400">
+      Saya seorang developer dengan pengalaman membangun website menggunakan HTML, CSS, JavaScript, dan framework modern.
+    </p>
+  </div>
+</section>
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
+  <div class="container max-w-6xl">
+    <h3 class="text-3xl font-bold text-center">Skills</h3>
+    <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- HTML -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <i class="fa-brands fa-html5 text-4xl text-orange-500"></i>
+        <p class="mt-3 font-semibold">HTML</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-orange-500 h-2.5 rounded-full" style="width: 90%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">90%</p>
+      </div>
+
+      <!-- CSS -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <i class="fa-brands fa-css3-alt text-4xl text-blue-500"></i>
+        <p class="mt-3 font-semibold">CSS</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">85%</p>
+      </div>
+
+      <!-- Java -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <i class="fa-brands fa-java text-4xl text-yellow-500"></i>
+        <p class="mt-3 font-semibold">Java</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 75%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">75%</p>
+      </div>
+
+      <!-- C -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <i class="fa-solid fa-c text-4xl text-cyan-500"></i>
+        <p class="mt-3 font-semibold">C</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-cyan-500 h-2.5 rounded-full" style="width: 70%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">70%</p>
+      </div>
+
+      <!-- Python -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <i class="fa-brands fa-python text-4xl text-yellow-500"></i>
+        <p class="mt-3 font-semibold">Python</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 65%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">65%</p>
+      </div>
+
+      <!-- react -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <i class="fa-brands fa-react text-4xl text-blue-500"></i>
+        <p class="mt-3 font-semibold">React</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-blue-500 h-2.5 rounded-full" style="width: 5%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">5%</p>
+      </div>
+
+      <!-- Bootstrap -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" 
+             alt="Bootstrap" class="w-12 h-12 mx-auto">
+        <p class="mt-3 font-semibold">Bootstrap</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-purple-600 h-2.5 rounded-full" style="width: 80%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">80%</p>
+      </div>
+
+      <!-- CorelDRAW -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <img src="images/coreldraw.png" alt="CorelDRAW" class="w-12 h-12 mx-auto">
+        <p class="mt-3 font-semibold">CorelDRAW</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-green-600 h-2.5 rounded-full" style="width: 70%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">70%</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="py-16 lg:py-24 bg-white dark:bg-slate-900" data-aos="fade-up">
+      <div class="container max-w-5xl">
+        <h3 class="text-3xl font-bold text-center">Pengalaman</h3>
+        <div class="mt-10 space-y-6">
+          <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl shadow">
+            <h4 class="font-semibold text-lg">Freelance</h4>
+            <p class="text-sm text-slate-500">2022 - Sekarang</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Membangun aplikasi web modern menggunakan React & Tailwind.</p>
+          </div>
+          <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl shadow">
+            <h4 class="font-semibold text-lg">Workshop Project Kuliah - Toko Grosiran Snack Jatingaleh</h4>
+            <p class="text-sm text-slate-500">2023</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Merancang dan membuat aplikasi sederhana stok barang.</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Mengimplementasikan logika dasar CRUD (Create, Read, Update, Delete) dalam pengembangan 
+              aplikasi</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Memanfaatkan bantuan AI untuk menyusun alur kerja aplikasi, merancang antarmuka 
+              pengguna, dan mengatasi kendala dalam coding.</p>
+          </div>
+          <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl shadow">
+            <h4 class="font-semibold text-lg">Magang Graphic Designer - CV. RedBee Advertising</h4>
+            <p class="text-sm text-slate-500">2019</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Menghasilkan berbagai desain kreatif, termasuk surat undangan, sertifikat lomba, dan kebutuhan 
+              branding lainnya.</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Mendalami teknik pemotongan dan produksi cetak untuk material promosi seperti kartu nama dan stiker.</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Berinteraksi langsung dengan klien untuk memahami kebutuhan mereka dan memastikan hasil 
+              desain yang sesuai dengan harapan mereka.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Event ===== -->
+    <section id="event" class="py-16 lg:py-24 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
+  <div class="container max-w-5xl">
+    <h3 class="text-3xl font-bold text-center">Acara</h3>
+    <div class="mt-10 space-y-6">
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow">
+        <h4 class="font-semibold text-lg">Webinar Modern Web Development</h4>
+        <p class="text-sm text-slate-500">Januari 2024</p>
+        <p class="mt-2 text-slate-600 dark:text-slate-400">
+          Mengikuti webinar tentang tren terbaru dalam pengembangan web, termasuk penggunaan framework dan teknologi terkini.
+        </p>
+      </div>
+      </div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATES ===== -->
+<section id="certificates" class="py-16 lg:py-24 bg-white dark:bg-slate-900" data-aos="fade-up">
+  <div class="container max-w-6xl">
+    <h3 class="text-3xl font-bold text-center">Sertifikat</h3>
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl shadow text-center">
+        <img src="images/alibaba.png" alt="AI Integration in Business with Alibaba Cloud" class="w-full h-auto rounded-lg mb-4">
+        <h4 class="font-semibold text-lg">AI Integration in Business with Alibaba Cloud </h4>
+        <p class="text-sm text-slate-500">22 Mei 2024</p>
+        <p class="text-sm text-slate-500">Alibaba Cloud</p>
+      </div>
+      <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl shadow text-center">
+        <img src="images/revou.png" alt="Sertifikat HTML, CSS, JavaScript" class="w-full h-auto rounded-lg mb-4">
+        <h4 class="font-semibold text-lg">Intro to Data Analytics with RevoU</h4>
+        <p class="text-sm text-slate-500">8 Agustus 2025</p>
+        <p class="text-sm text-slate-500">RevoU</p>
+      </div>
+      </div>
+  </div>
+</section>
+
+    <!-- ===== PORTFOLIO ===== -->
+    <section id="project" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
+      <div class="container max-w-6xl">
+        <h3 class="text-2xl md:text-3xl font-bold text-center">Website Project</h3>
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
+          
+          <!-- Card -->
+          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
+            <img src="images/foto1.png" alt="Landing Page Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center gap-3 text-white text-center">
+              <h4 class="text-lg font-semibold">Landing Page</h4>
+              <div class="flex gap-3">
+                <a href="https://demo-pondok.vercel.app/" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Demo</a>
+                <a href="https://github.com/username/project1" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">Code</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copy & ganti untuk project lain -->
+          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
+            <img src="images/project2.jpg" alt="E-commerce Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center gap-3 text-white text-center">
+              <h4 class="text-lg font-semibold">E-commerce</h4>
+              <div class="flex gap-3">
+                <a href="https://demo-link.com" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Demo</a>
+                <a href="https://github.com/username/project2" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">Code</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+        <!-- ===== PORTFOLIO DESIGN ===== -->
+    <section id="design" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
+      <div class="container max-w-6xl">
+        <h3 class="text-2xl md:text-3xl font-bold text-center">Design Project</h3>
+        <p class="text-center text-slate-600 dark:text-slate-400 mt-2 text-sm md:text-base">
+          Kumpulan karya desain saya menggunakan CorelDRAW
+        </p>
+        
+        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
+          
+          <!-- Design Card -->
+          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
+            <img src="images/design1.jpg" alt="Poster Event" 
+                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
+              <h4 class="text-lg font-semibold">Poster Event</h4>
+              <p class="text-sm">Desain promosi acara musik</p>
+            </div>
+          </div>
+
+          <!-- Design Card -->
+          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
+            <img src="images/design2.jpg" alt="Logo Brand" 
+                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
+              <h4 class="text-lg font-semibold">Logo Brand</h4>
+              <p class="text-sm">Desain logo untuk UMKM</p>
+            </div>
+          </div>
+
+          <!-- Design Card -->
+          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
+            <img src="images/design3.jpg" alt="Brosur Produk" 
+                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
+              <h4 class="text-lg font-semibold">Brosur Produk</h4>
+              <p class="text-sm">Company profile dan katalog</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="py-16 lg:py-24 bg-white dark:bg-slate-900" data-aos="fade-up">
+      <div class="container max-w-4xl text-center">
+        <h3 class="text-3xl font-bold">Kontak</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-400">Ingin bekerja sama atau sekedar menyapa?</p>
+
+        <div class="mt-6 space-y-3">
+          <p><i class="fa-solid fa-envelope mr-2"></i>Email: <a href="mailto:email@saya.com" class="text-primary-600 hover:underline">email@saya.com</a></p>
+          <p><i class="fa-solid fa-phone mr-2"></i>Telp: +62 812-3456-7890</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="mt-6 flex justify-center gap-4">
+          <a href="https://github.com/username" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-github text-2xl"></i></a>
+          <a href="https://linkedin.com/in/username" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+          <a href="https://twitter.com/username" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-twitter text-2xl"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t bg-white dark:bg-slate-900 py-6">
+    <div class="container max-w-7xl text-center text-sm text-slate-600 dark:text-slate-400">
+      &copy; 2025 Nama Kamu. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" class="fixed bottom-6 right-6 hidden bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- AOS & Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const themeToggle = document.getElementById('themeToggle');
+    const scrollTop = document.getElementById('scrollTop');
+    const html = document.documentElement;
+
+    // Mobile nav toggle
+    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.add('hidden')));
+
+    // Theme toggle
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Scroll to top button
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTop.classList.remove('hidden');
+      } else {
+        scrollTop.classList.add('hidden');
+      }
+    });
+    scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
