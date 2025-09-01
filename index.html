@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio Saya</title>
 
+  <link rel="stylesheet" href="css/styles.css">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -86,16 +87,16 @@
 
   <div class="relative z-10 container max-w-3xl text-center text-white" data-aos="fade-up">
     <h2 class="text-4xl sm:text-5xl font-extrabold">
-      Halo, Saya <span class="text-primary-400">Fikli Asrizal M</span>
+      Halo, Saya <span class="hero-highlight">Fikli Asrizal M</span>
     </h2>
     <p class="mt-4 text-lg text-slate-200">
       <span id="typed"></span>
     </p>
     <div class="mt-6 flex gap-4 justify-center">
-      <a href="#project" class="inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-white shadow-lg hover:bg-primary-700">
+      <a href="#project" class="btn-custom inline-flex items-center gap-2 rounded-xl bg-primary-600 px-5 py-3 text-white shadow-lg hover:bg-primary-700">
         <span>Lihat Karya</span><i class="fa-solid fa-arrow-right"></i>
       </a>
-      <a href="cv.pdf" target="_blank" class="inline-flex items-center gap-2 rounded-xl border border-white/80 px-5 py-3 text-white hover:bg-white hover:text-primary-700 transition">
+      <a href="cv.pdf" target="_blank" class="btn-custom inline-flex items-center gap-2 rounded-xl border border-white/80 px-5 py-3 text-white hover:bg-white hover:text-primary-700 transition">
         <i class="fa-solid fa-file"></i> Download CV
       </a>
     </div>
@@ -103,12 +104,15 @@
 </section>
 
 
+
 <!-- ===== ABOUT ===== -->
 <section id="about" class="py-16 lg:py-24 bg-white dark:bg-slate-900" data-aos="fade-up">
   <div class="container max-w-5xl">
     <h3 class="text-3xl font-bold">Tentang Saya</h3>
     <p class="mt-4 text-slate-600 dark:text-slate-400">
-      Saya seorang developer dengan pengalaman membangun website menggunakan HTML, CSS, JavaScript, dan framework modern.
+      Halo! Saya Fikli, lulusan baru dari Teknik Informatika yang tertarik pada pengembangan aplikasi web dan pembuatan konten digital. 
+      Saya memiliki pengalaman dalam pemrograman dan desain grafis untuk menciptakan karya yang menarik. 
+      Dengan semangat belajar yang tinggi dan kemampuan bekerja dalam tim, saya siap berkontribusi dalam menciptakan solusi yang berguna.
     </p>
   </div>
 </section>
@@ -272,13 +276,12 @@
   </div>
 </section>
 
-
 <!-- ===== PORTFOLIO ===== -->
 <section id="project" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
   <div class="container max-w-6xl">
     <h3 class="text-2xl md:text-3xl font-bold text-center">Website Project</h3>
     <p class="text-center text-slate-600 dark:text-slate-400 mt-2 text-sm md:text-base">
-      Beberapa Website yang telah saya buat, diantaranya masih on going
+      “Beberapa website yang pernah saya buat, sebagian masih dalam tahap pengembangan.”
     </p>    
     <div id="projectGrid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
       <!-- Card akan di-generate otomatis -->
@@ -295,14 +298,14 @@
       code: "https://github.com/FiiekGatarieekV1/DemoPondok"
     },
     {
-      title: "E-commerce",
+      title: "On - Going Website",
       url: "https://demo-link.com",
       code: "https://github.com/username/project2"
     },
     {
       title: "Portfolio Website",
-      url: "https://portfolio-example.com",
-      code: "https://github.com/username/project3"
+      url: "https://myfiie.netlify.app/",
+      code: "https://github.com/FiiekGatarieekV1/myportfolio"
     }
   ];
 
@@ -312,7 +315,7 @@
   // Generate card
   projects.forEach(proj => {
     const card = document.createElement("div");
-    card.className = "relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900";
+    card.className = "project-card relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900";
 
     card.innerHTML = `
       <img 
@@ -323,8 +326,8 @@
       <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center gap-3 text-white text-center">
         <h4 class="text-lg font-semibold">${proj.title}</h4>
         <div class="flex gap-3">
-          <a href="${proj.url}" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Demo</a>
-          <a href="${proj.code}" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">Code</a>
+          <a href="${proj.url}" target="_blank" class="btn-custom px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Demo</a>
+          <a href="${proj.code}" target="_blank" class="btn-custom px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">Code</a>
         </div>
       </div>
     `;
@@ -334,12 +337,13 @@
 </script>
 
 
+
     <!-- Galeri Instagram-->
 <section id="design" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
   <div class="container max-w-6xl">
-    <h3 class="text-2xl md:text-3xl font-bold text-center">Instagram Project</h3>
+    <h3 class="text-2xl md:text-3xl font-bold text-center">Desain Project</h3>
     <p class="text-center text-slate-600 dark:text-slate-400 mt-2 text-sm md:text-base">
-      Beberapa karya desain terbaru dari Instagram saya.
+      “Kumpulan karya desain, termasuk proyek yang masih dalam proses pengembangan.”
     </p>
 
     <!-- Grid Center -->
@@ -375,7 +379,7 @@
           <a href="https://www.linkedin.com/in/fiiefikli/" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-linkedin text-2xl"></i></a>
           <a href="https://twitter.com/myfiiek" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-twitter text-2xl"></i></a>
           <a href="https://www.instagram.com/myfiiek_/" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-instagram text-2xl"></i></a>
-
+          <a href="https://www.youtube.com/@FiieGatariiek" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-youtube text-2xl"></i></a>
         </div>
       </div>
     </section>
@@ -436,6 +440,7 @@
       localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
     });
 
+    
     // Scroll to top button
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {

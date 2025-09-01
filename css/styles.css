@@ -1,79 +1,57 @@
-/* ===== Global Style ===== */
-body {
-  font-family: 'Inter', sans-serif;
+/* styles.css */
+
+/* Font smoothing */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== Hero Section Wave ===== */
-section.relative {
-  position: relative;
-  overflow: hidden;
+/* Animasi smooth fade-in */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+[data-aos].aos-animate {
+  opacity: 1;
 }
 
-section.relative::after {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
-  height: 80px;
-  background: white;
-  border-radius: 50% 50% 0 0;
-  z-index: 5;
+/* Efek hover untuk tombol */
+.btn-custom {
+  transition: all 0.3s ease-in-out;
 }
-
-/* ===== Button Animations ===== */
-a, button {
-  transition: all 0.3s ease;
-}
-
-a:hover, button:hover {
+.btn-custom:hover {
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
 }
 
-/* ===== Navbar active link ===== */
-nav a.active {
-  color: #4f46e5;
-  font-weight: 600;
+/* Card Project */
+.project-card img {
+  transition: transform 0.5s ease;
 }
-
-/* ===== Portfolio & Design Card Hover ===== */
-.group img {
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.group:hover img {
-  filter: brightness(0.85);
-}
-
-.group .absolute {
-  transition: opacity 0.4s ease;
-}
-
-/* ===== Scroll To Top Button ===== */
-#scrollTop {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-#scrollTop:hover {
+.project-card:hover img {
   transform: scale(1.1);
 }
 
-/* ===== Dark Mode Shadow ===== */
-.dark .shadow {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+/* Scroll-to-top animasi */
+#scrollTop {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#scrollTop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+#scrollTop.hide {
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-/* ===== Typing Animation Cursor ===== */
-#typed {
-  border-right: 2px solid #fff;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: blink 0.7s infinite;
+/* Efek Hero text glow */
+.hero-highlight {
+  color: #6366f1;
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
 }
 
-@keyframes blink {
-  0%, 50%, 100% { border-color: transparent; }
-  25%, 75% { border-color: #fff; }
+/* Instagram embed center fix */
+.instagram-media {
+  margin: auto !important;
 }
