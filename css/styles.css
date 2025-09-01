@@ -1,99 +1,79 @@
-/* ===== Global ===== */
-html {
-  scroll-behavior: smooth;
-}
-
+/* ===== Global Style ===== */
 body {
-  transition: background 0.3s ease, color 0.3s ease;
   font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Poppins', sans-serif;
+/* ===== Hero Section Wave ===== */
+section.relative {
+  position: relative;
+  overflow: hidden;
 }
 
-/* ===== Navbar ===== */
-header a {
-  transition: color 0.3s ease;
-}
-header a:hover {
-  color: #0ea5e9;
-}
-
-/* ===== Dark Mode Toggle ===== */
-#theme-toggle {
-  transition: transform 0.3s ease;
-}
-#theme-toggle:hover {
-  transform: rotate(15deg) scale(1.1);
+section.relative::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 80px;
+  background: white;
+  border-radius: 50% 50% 0 0;
+  z-index: 5;
 }
 
-/* ===== Card Hover Effect ===== */
-.card-hover {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.card-hover:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+/* ===== Button Animations ===== */
+a, button {
+  transition: all 0.3s ease;
 }
 
-/* ===== Image Zoom ===== */
-.img-zoom {
-  transition: transform 0.5s ease;
+a:hover, button:hover {
+  transform: translateY(-2px);
 }
-.img-zoom:hover {
+
+/* ===== Navbar active link ===== */
+nav a.active {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+/* ===== Portfolio & Design Card Hover ===== */
+.group img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.group:hover img {
+  filter: brightness(0.85);
+}
+
+.group .absolute {
+  transition: opacity 0.4s ease;
+}
+
+/* ===== Scroll To Top Button ===== */
+#scrollTop {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollTop:hover {
   transform: scale(1.1);
 }
 
-/* ===== Footer ===== */
-footer {
-  font-size: 0.9rem;
-  background: linear-gradient(90deg, #1e293b, #0f172a);
-  color: white;
-}
-footer a {
-  color: #38bdf8;
-  transition: color 0.3s;
-}
-footer a:hover {
-  color: #0ea5e9;
-}
-/* ===== Global ===== */
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: 'Inter', sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+/* ===== Dark Mode Shadow ===== */
+.dark .shadow {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* ===== Card Hover ===== */
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-hover:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== Image Zoom ===== */
-.img-zoom {
-  transition: transform 0.5s ease;
-}
-.img-zoom:hover {
-  transform: scale(1.08);
+/* ===== Typing Animation Cursor ===== */
+#typed {
+  border-right: 2px solid #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: blink 0.7s infinite;
 }
 
-/* ===== Footer ===== */
-footer {
-  background: linear-gradient(90deg, #1e293b, #0f172a);
-  color: #fff;
-  font-size: 0.9rem;
-}
-footer a {
-  color: #38bdf8;
-  transition: color 0.3s;
-}
-footer a:hover {
-  color: #0ea5e9;
+@keyframes blink {
+  0%, 50%, 100% { border-color: transparent; }
+  25%, 75% { border-color: #fff; }
 }

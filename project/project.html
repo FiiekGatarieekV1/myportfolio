@@ -1,185 +1,152 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio - Project Saya</title>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Saya</title>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            poppins: ['Poppins', 'sans-serif'],
-          }
-        }
-      }
-    }
+    tailwind.config = { darkMode: 'class' }
   </script>
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="/portfolio/css/styles.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Typed.js (efek ketik) -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
 
-  
-  <!-- ===== NAVBAR ===== -->
-  <header class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md z-50 shadow">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-poppins font-bold text-blue-600 dark:text-blue-400">
-        <a href="#"></a>Portfolio</h1>
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow z-50">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" class="font-bold text-xl text-indigo-600">MyPortfolio</a>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-indigo-600 active">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-600">About</a></li>
+        <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
+        <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex space-x-6 font-medium">
-        <a href="/index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-        <a href="#website" class="hover:text-blue-600 dark:hover:text-blue-400">Project</a>
-        <a href="#design" class="hover:text-blue-600 dark:hover:text-blue-400">Design</a>
-        <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-      </nav>
+  <!-- Hero -->
+  <section id="home" role="hero" class="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-center">
+    <div class="z-10">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Halo, Saya <span class="text-yellow-300">Your Name</span></h1>
+      <h2 class="text-2xl md:text-3xl mb-6">
+        <span id="typed"></span>
+      </h2>
+      <a href="#projects" class="px-6 py-3 bg-white text-indigo-600 rounded-full shadow font-medium hover:bg-yellow-300 transition">Lihat Portfolio</a>
+    </div>
+  </section>
 
-      <!-- Right Controls -->
-      <div class="flex items-center space-x-4">
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700">
-          🌙
-        </button>
-        <!-- Mobile Menu Button -->
-        <button id="menuBtn" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700">☰</button>
+  <!-- About -->
+  <section id="about" class="py-16 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <img src="images/profile.png" alt="Profile" class="rounded-2xl shadow-lg">
+      <div>
+        <h2 class="text-3xl font-bold mb-4">Tentang Saya</h2>
+        <p class="mb-4">Saya seorang Web & Graphic Designer yang fokus pada pembuatan desain modern, simple, dan responsif. Berpengalaman di UI/UX, branding, dan pengembangan web.</p>
+        <div class="space-y-4">
+          <div data-skill="html">
+            <p class="font-medium">HTML</p>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-orange-500 h-3"></div>
+            </div>
+          </div>
+          <div data-skill="css">
+            <p class="font-medium">CSS</p>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-blue-500 h-3"></div>
+            </div>
+          </div>
+          <div data-skill="python">
+            <p class="font-medium">Python</p>
+            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+              <div class="bg-yellow-500 h-3"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Mobile Nav -->
-    <nav id="mobileNav" class="hidden flex-col space-y-3 bg-white dark:bg-gray-800 p-4 md:hidden">
-      <a href="/index.html" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-      <a href="#website" class="hover:text-blue-600 dark:hover:text-blue-400">Project</a>
-      <a href="#design" class="hover:text-blue-600 dark:hover:text-blue-400">Design</a>
-      <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-    </nav>
-  </header>
-
-  <main class="pt-24">
-    <!-- ===== WEBSITE PROJECT ===== -->
-    <section id="website" class="py-16 container mx-auto px-4">
-      <h2 class="text-3xl font-poppins font-bold text-center mb-10" data-aos="fade-up">Website & Coding Project</h2>
-      <div class="grid md:grid-cols-3 gap-6">
+  <!-- Projects -->
+  <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-8">My Projects</h2>
+      <div class="grid md:grid-cols-3 gap-8">
         
-        <!-- Demo Web -->
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow card-hover overflow-hidden group" data-aos="zoom-in">
-          <img src="images/foto1.png" class="w-full aspect-video object-cover img-zoom" alt="Project Landing Page">
-          <div class="p-5">
-            <h3 class="text-xl font-bold mb-2">Landing Page</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Website sederhana untuk promosi produk/jasa.</p>
+        <!-- Project 1 -->
+        <div class="group bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
+          <img src="images/web-project1.png" alt="Web Project" class="w-full">
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold">Landing Page Design</h3>
+            <p class="text-gray-600 dark:text-gray-300">Responsive landing page untuk sekolah.</p>
+            <a href="https://link-demo.com" target="_blank" class="text-indigo-600 hover:underline">View Project →</a>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow card-hover overflow-hidden group" data-aos="zoom-in">
-          <img src="images/foto2.png" class="w-full aspect-video object-cover img-zoom" alt="Aplikasi Dashboard">
-          <div class="p-5">
-            <h3 class="text-xl font-bold mb-2">Dashboard</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Aplikasi web interaktif dengan data chart.</p>
+        <!-- Project 2 -->
+        <div class="group bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
+          <img src="images/logo1.png" alt="Logo Design" class="w-full">
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold">Logo Design</h3>
+            <p class="text-gray-600 dark:text-gray-300">Minimalist logo untuk brand clothing.</p>
           </div>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow card-hover overflow-hidden group" data-aos="zoom-in">
-          <img src="images/foto3.png" class="w-full aspect-video object-cover img-zoom" alt="Portfolio Website">
-          <div class="p-5">
-            <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Website pribadi untuk menampilkan karya.</p>
+        <!-- Project 3 -->
+        <div class="group bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
+          <img src="images/uiux.png" alt="UI/UX Design" class="w-full">
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold">Mobile App UI</h3>
+            <p class="text-gray-600 dark:text-gray-300">UI/UX design aplikasi e-learning.</p>
           </div>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== DESIGN PROJECT ===== -->
-    <section id="design" class="py-16 bg-gray-100 dark:bg-gray-900">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-poppins font-bold text-center mb-10" data-aos="fade-up">Design Project</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          
-          <!-- Card Design -->
-          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow card-hover overflow-hidden group" data-aos="flip-left">
-            <img src="/images/tg.jpg" class="w-full aspect-video object-cover img-zoom" alt="Banner Telur Gulung">
-            <div class="p-5">
-              <h3 class="text-xl font-bold mb-2">Banner Telur Gulung</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Banner Telur Gulung.</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1vRqMhNycCf5UhKv-SqV-64cmYFjCsX3R/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1uVjRSZtbWhAlz90q-DQWXRlFnMQwYf29/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-              </p>
-            </div>
-          </div>
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Hubungi Saya</h2>
+      <p class="mb-6">Tertarik bekerja sama? Silakan hubungi saya melalui email atau sosial media.</p>
+      <a href="mailto:youremail@gmail.com" class="px-6 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-500 transition">Email Saya</a>
+    </div>
+  </section>
 
-          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow card-hover overflow-hidden group" data-aos="flip-left">
-            <img src="/images/dawet.jpg" class="w-full aspect-video object-cover img-zoom" alt="Banner Cendol Dawet">
-            <div class="p-5">
-              <h3 class="text-xl font-bold mb-2">Banner Cendol Dawet</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Desain banner makanan tradisional.</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1Ja76NPADquThrcm2tCzy4_37JPfmawgi/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1c_zd1MWzcWBBH5IOQiBomDI2Ed5Qcx9U/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
+  <!-- Scroll To Top -->
+  <button id="scrollTop" class="fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow hidden">
+    ↑
+  </button>
 
-          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow card-hover overflow-hidden group" data-aos="flip-left">
-            <img src="/images/posterkos.jpg" class="w-full aspect-video object-cover img-zoom" alt="Poster Kost-Kost an">
-            <div class="p-5">
-              <h3 class="text-xl font-bold mb-2">Poster Kost-Kost an</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Poster Tempat Kost.</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1Y9QA22VrLTTEtIMekI7iBGUD5JANOfw0/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1V8TSGvUfCvNCx04ld-wqGJATp3ZEj0Ks/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="py-16 container mx-auto px-4">
-      <h2 class="text-3xl font-poppins font-bold text-center mb-10" data-aos="fade-up">Kontak Saya</h2>
-      <div class="text-center">
-        <p>Email: <a href="mailto:emailkamu@gmail.com" class="text-blue-600 dark:text-blue-400">emailkamu@gmail.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/628123456789" class="text-blue-600 dark:text-blue-400">+62 812-3456-789</a></p>
-      </div>
-    </section>
-  </main>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="py-6 text-center">
-    <p>&copy; 2025 Portfolio Saya. Dibuat dengan ❤ dan TailwindCSS.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Script -->
   <script>
-    AOS.init();
-
-    // Dark Mode Toggle
-    const themeToggle = document.getElementById("theme-toggle");
-    const html = document.documentElement;
-    themeToggle.addEventListener("click", () => {
-      html.classList.toggle("dark");
-      themeToggle.textContent = html.classList.contains("dark") ? "☀️" : "🌙";
+    // Typed.js
+    new Typed("#typed", {
+      strings: ["Web Designer", "Graphic Designer", "UI/UX Enthusiast"],
+      typeSpeed: 80,
+      backSpeed: 50,
+      loop: true
     });
 
-    // Mobile Nav
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileNav = document.getElementById("mobileNav");
-    menuBtn.addEventListener("click", () => {
-      mobileNav.classList.toggle("hidden");
+    // Scroll To Top
+    const scrollTop = document.getElementById("scrollTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        scrollTop.classList.remove("hidden");
+      } else {
+        scrollTop.classList.add("hidden");
+      }
     });
+    scrollTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   </script>
+
 </body>
 </html>
-
-

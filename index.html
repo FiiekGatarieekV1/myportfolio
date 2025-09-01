@@ -274,139 +274,87 @@
   </div>
 </section>
 
-    <!-- ===== PORTFOLIO ===== -->
-    <section id="project" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
-      <div class="container max-w-6xl">
-        <h3 class="text-2xl md:text-3xl font-bold text-center">Website Project</h3>
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
-          
-          <!-- Card -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/foto1.png" alt="Landing Page Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center gap-3 text-white text-center">
-              <h4 class="text-lg font-semibold">Landing Page</h4>
-              <div class="flex gap-3">
-                <a href="https://demo-pondok.vercel.app/" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Demo</a>
-                <a href="https://github.com/username/project1" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">Code</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Copy & ganti untuk project lain -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/project2.jpg" alt="E-commerce Project" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center gap-3 text-white text-center">
-              <h4 class="text-lg font-semibold">E-commerce</h4>
-              <div class="flex gap-3">
-                <a href="https://demo-link.com" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Demo</a>
-                <a href="https://github.com/username/project2" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">Code</a>
-              </div>
-            </div>
-          </div>
+<!-- ===== PORTFOLIO ===== -->
+<section id="project" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
+  <div class="container max-w-6xl">
+    <h3 class="text-2xl md:text-3xl font-bold text-center">Website Project</h3>
+    <div id="projectGrid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
+      <!-- Card akan di-generate otomatis -->
+    </div>
+  </div>
+</section>
 
+<script>
+  // Daftar Project
+  const projects = [
+    {
+      title: "Website Sekolah",
+      url: "https://ponpesalbisyri.netlify.app/",
+      code: "https://github.com/FiiekGatarieekV1/DemoPondok"
+    },
+    {
+      title: "E-commerce",
+      url: "https://demo-link.com",
+      code: "https://github.com/username/project2"
+    },
+    {
+      title: "Portfolio Website",
+      url: "https://portfolio-example.com",
+      code: "https://github.com/username/project3"
+    }
+  ];
+
+  // Target container
+  const projectGrid = document.getElementById("projectGrid");
+
+  // Generate card
+  projects.forEach(proj => {
+    const card = document.createElement("div");
+    card.className = "relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900";
+
+    card.innerHTML = `
+      <img 
+        src="https://image.thum.io/get/width/800/crop/600/${proj.url}" 
+        alt="${proj.title}" 
+        class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+      
+      <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center gap-3 text-white text-center">
+        <h4 class="text-lg font-semibold">${proj.title}</h4>
+        <div class="flex gap-3">
+          <a href="${proj.url}" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Demo</a>
+          <a href="${proj.code}" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">Code</a>
         </div>
       </div>
-    </section>
+    `;
+    
+    projectGrid.appendChild(card);
+  });
+</script>
 
-        <!-- ===== PORTFOLIO DESIGN ===== -->
-    <section id="design" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
-      <div class="container max-w-6xl">
-        <h3 class="text-2xl md:text-3xl font-bold text-center">Design Project</h3>
-        <p class="text-center text-slate-600 dark:text-slate-400 mt-2 text-sm md:text-base">
-          Kumpulan karya desain saya.
-        </p>
-        
-        <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-2">
-          
-          <!-- Design Card -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/tg.jpg" alt="Poster Event" 
-                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
-              <h4 class="text-lg font-semibold">Banner Telur Gulung</h4>
-              <p class="text-sm">Desain Banner Telur Gulung</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1vRqMhNycCf5UhKv-SqV-64cmYFjCsX3R/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1uVjRSZtbWhAlz90q-DQWXRlFnMQwYf29/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Design Card -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/dawet.jpg" alt="Poster Event" 
-                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
-              <h4 class="text-lg font-semibold">Banner Telur Gulung</h4>
-              <p class="text-sm">Desain Banner Telur Gulung</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1Ja76NPADquThrcm2tCzy4_37JPfmawgi/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1c_zd1MWzcWBBH5IOQiBomDI2Ed5Qcx9U/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
+    <!-- Galeri Instagram-->
+<section id="design" class="py-12 lg:py-20 bg-slate-50 dark:bg-slate-800" data-aos="fade-up">
+  <div class="container max-w-6xl">
+    <h3 class="text-2xl md:text-3xl font-bold text-center">Instagram Project</h3>
+    <p class="text-center text-slate-600 dark:text-slate-400 mt-2 text-sm md:text-base">
+      Beberapa karya terbaru dari Instagram saya.
+    </p>
 
-          <!-- Design Card -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/posterkos.jpg" alt="Poster Event" 
-                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
-              <h4 class="text-lg font-semibold">Banner Telur Gulung</h4>
-              <p class="text-sm">Desain Banner Telur Gulung</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1Y9QA22VrLTTEtIMekI7iBGUD5JANOfw0/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1V8TSGvUfCvNCx04ld-wqGJATp3ZEj0Ks/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Design Card -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/posterkos.jpg" alt="Poster Event" 
-                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
-              <h4 class="text-lg font-semibold">Banner Telur Gulung</h4>
-              <p class="text-sm">Desain Banner Telur Gulung</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1Y9QA22VrLTTEtIMekI7iBGUD5JANOfw0/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1V8TSGvUfCvNCx04ld-wqGJATp3ZEj0Ks/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Design Card -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/posterkos.jpg" alt="Poster Event" 
-                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
-              <h4 class="text-lg font-semibold">Banner Telur Gulung</h4>
-              <p class="text-sm">Desain Banner Telur Gulung</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1Y9QA22VrLTTEtIMekI7iBGUD5JANOfw0/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1V8TSGvUfCvNCx04ld-wqGJATp3ZEj0Ks/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Design Card -->
-          <div class="relative group rounded-xl overflow-hidden shadow hover:shadow-xl bg-white dark:bg-slate-900">
-            <img src="images/posterkos.jpg" alt="Poster Event" 
-                 class="w-full h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-2">
-              <h4 class="text-lg font-semibold">Banner Telur Gulung</h4>
-              <p class="text-sm">Desain Banner Telur Gulung</p>
-              <div class="flex gap-3">
-                <a href="https://drive.google.com/file/d/1Y9QA22VrLTTEtIMekI7iBGUD5JANOfw0/view?usp=drive_link" target="_blank" class="px-3 py-1 bg-primary-600 rounded-lg text-sm hover:bg-primary-700">Full Design</a>
-                <a href="https://drive.google.com/file/d/1V8TSGvUfCvNCx04ld-wqGJATp3ZEj0Ks/view?usp=drive_link" target="_blank" class="px-3 py-1 border border-white rounded-lg text-sm hover:bg-white hover:text-primary-700">File</a>
-              </div>
-            </div>
-          </div>
+    <!-- Grid Center -->
+    <div class="mt-10 flex justify-center px-2">
+      <!-- Instagram Embed -->
+      <blockquote 
+        class="instagram-media" 
+        data-instgrm-permalink="https://www.instagram.com/fikli_/" 
+        data-instgrm-version="14">
+      </blockquote>
+    </div>
+  </div>
+</section>
 
-        </div>
-      </div>
-    </section>
-  </main>
-
+<!-- Instagram Embed Script -->
+<script async src="https://www.instagram.com/embed.js"></script>
 
 
     <!-- ===== CONTACT ===== -->
@@ -416,15 +364,17 @@
         <p class="mt-2 text-slate-600 dark:text-slate-400">Ingin bekerja sama atau sekedar menyapa?</p>
 
         <div class="mt-6 space-y-3">
-          <p><i class="fa-solid fa-envelope mr-2"></i>Email: <a href="mailto:email@saya.com" class="text-primary-600 hover:underline">email@saya.com</a></p>
-          <p><i class="fa-solid fa-phone mr-2"></i>Telp: +62 812-3456-7890</p>
+          <p><i class="fa-solid fa-envelope mr-2"></i>Email: <a href="mailto:adtea01@gmail.com" class="text-primary-600 hover:underline">adtea01@gmail.com</a></p>
+          <p><i class="fa-solid fa-phone mr-2"></i>Telp/Wa: +6285884765199</p>
         </div>
 
         <!-- Social Media -->
         <div class="mt-6 flex justify-center gap-4">
-          <a href="https://github.com/username" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-github text-2xl"></i></a>
-          <a href="https://linkedin.com/in/username" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-linkedin text-2xl"></i></a>
-          <a href="https://twitter.com/username" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-twitter text-2xl"></i></a>
+          <a href="https://github.com/FiiekGatarieekV1" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-github text-2xl"></i></a>
+          <a href="https://www.linkedin.com/in/fiiefikli/" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+          <a href="https://twitter.com/myfiiek" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-twitter text-2xl"></i></a>
+          <a href="https://www.instagram.com/myfiiek_/" target="_blank" class="hover:text-primary-600"><i class="fa-brands fa-instagram text-2xl"></i></a>
+
         </div>
       </div>
     </section>
@@ -434,9 +384,27 @@
   <!-- ===== FOOTER ===== -->
   <footer class="border-t bg-white dark:bg-slate-900 py-6">
     <div class="container max-w-7xl text-center text-sm text-slate-600 dark:text-slate-400">
-      &copy; 2025 Nama Kamu. All rights reserved.
+      &copy; 2025- Fikli Asrizal M. All rights reserved.
     </div>
   </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <!-- Typed.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  // Efek Ketik di Hero
+  var typed = new Typed("#typed", {
+    strings: [
+      "Seorang Web Developer.",
+      "Seorang Graphic Designer.",
+      "Seorang UI/UX Enthusiast."
+    ],
+    typeSpeed: 60,
+    backSpeed: 40,
+    backDelay: 1500,
+    loop: true
+  });
+</script>
 
   <!-- Scroll to top -->
   <button id="scrollTop" class="fixed bottom-6 right-6 hidden bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700">
@@ -479,8 +447,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
