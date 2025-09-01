@@ -20,9 +20,25 @@ Website ini berisi informasi tentang saya, proyek-proyek yang sudah pernah saya 
 
 ---
 
-## 📸 Preview
-![Portfolio Preview](images/preview.png)
+## 📂 Struktur Folder
 
 ---
 
-## 📂 Struktur Folder
+## 💻 Teknologi yang Digunakan
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [AOS.js](https://michalsnik.github.io/aos/)  
+- [Typed.js](https://github.com/mattboldt/typed.js/)  
+- [Font Awesome](https://fontawesome.com/)  
+
+---
+
+## 📬 Kontak
+- 💼 [LinkedIn]([https://linkedin.com/in/username](https://www.linkedin.com/in/fiiefikli/))  
+- 🐙 [GitHub](https://github.com/FiiekGatarieekV1)  
+- ✉️ Email: adtea01@gmail.com
+- ✉️ Email 2: fklprojection@gmail.com
+---
+
+### 📝 Catatan
+Beberapa proyek pada section portfolio masih **dalam tahap pengembangan (on going)**.
+
