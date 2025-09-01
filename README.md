@@ -10,14 +10,17 @@ Website ini berisi informasi tentang saya, proyek-proyek yang sudah pernah saya 
 
 ---
 
-## ✨ Fitur
-- Tampilan **responsive** menggunakan TailwindCSS
-- **Dark Mode** toggle
-- Animasi dengan **AOS (Animate On Scroll)**
-- Efek typing dengan **Typed.js**
-- Section Portfolio dengan preview proyek
-- Tombol **scroll to top**
 
+## 📂 Struktur Folder
+```bash
+.
+├── index.html        # Halaman utama
+├── css/
+│   └── styles.css    # Custom CSS
+├── js/
+│   └── main.js       # Script utama
+├── images/           # Gambar dan preview
+└── README.md
 ---
 
 ## 📂 Struktur Folder
