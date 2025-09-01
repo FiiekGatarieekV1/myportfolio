@@ -33,7 +33,7 @@ Website ini berisi informasi tentang saya, proyek-proyek yang sudah pernah saya 
 ---
 
 ## 📬 Kontak
-- 💼 [LinkedIn]([https://linkedin.com/in/username](https://www.linkedin.com/in/fiiefikli/))  
+- 💼 [LinkedIn]([https://www.linkedin.com/in/fiiefikli/])  
 - 🐙 [GitHub](https://github.com/FiiekGatarieekV1)  
 - ✉️ Email: adtea01@gmail.com
 - ✉️ Email 2: fklprojection@gmail.com
