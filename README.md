@@ -22,16 +22,7 @@ Website ini berisi informasi tentang saya, proyek-proyek yang sudah pernah saya 
 ├── images/           # Gambar dan preview
 └── README.md
 ---
-
-## 📂 Struktur Folder
-.
-├── index.html # Halaman utama
-├── css/styles.css # Custom CSS
-├── js/
-│ └── main.js # Script utama
-├── images/ # Gambar dan preview
-└── README.md
----
+```
 
 ## 💻 Teknologi yang Digunakan
 - [Tailwind CSS](https://tailwindcss.com/)  
