@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio Saya</title>
+  <title>Galeri Desain</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -13,140 +13,148 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-
-  <!-- Typed.js (efek ketik) -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
 
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow z-50">
-    <div class="container mx-auto flex items-center justify-between px-6 py-4">
-      <a href="#" class="font-bold text-xl text-indigo-600">MyPortfolio</a>
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="#home" class="hover:text-indigo-600 active">Home</a></li>
-        <li><a href="#about" class="hover:text-indigo-600">About</a></li>
-        <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
-        <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<!-- Navbar -->
+<nav class="fixed top-0 w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow z-50">
+  <div class="container mx-auto flex items-center justify-between px-6 py-4">
+    
+    <!-- Tombol Kembali -->
+    <a href="/index.html" class="text-sm md:text-base px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-lg shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      ← Kembali
+    </a>
 
-  <!-- Hero -->
-  <section id="home" role="hero" class="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-center">
-    <div class="z-10">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Halo, Saya <span class="text-yellow-300">Your Name</span></h1>
-      <h2 class="text-2xl md:text-3xl mb-6">
-        <span id="typed"></span>
-      </h2>
-      <a href="#projects" class="px-6 py-3 bg-white text-indigo-600 rounded-full shadow font-medium hover:bg-yellow-300 transition">Lihat Portfolio</a>
-    </div>
-  </section>
+    <!-- Judul -->
+    <a href="#" class="font-bold text-xl text-indigo-600">Galeri Desain</a>
+  </div>
+</nav>
 
-  <!-- About -->
-  <section id="about" class="py-16 bg-white dark:bg-gray-800">
-    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-      <img src="images/profile.png" alt="Profile" class="rounded-2xl shadow-lg">
-      <div>
-        <h2 class="text-3xl font-bold mb-4">Tentang Saya</h2>
-        <p class="mb-4">Saya seorang Web & Graphic Designer yang fokus pada pembuatan desain modern, simple, dan responsif. Berpengalaman di UI/UX, branding, dan pengembangan web.</p>
-        <div class="space-y-4">
-          <div data-skill="html">
-            <p class="font-medium">HTML</p>
-            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-              <div class="bg-orange-500 h-3"></div>
-            </div>
-          </div>
-          <div data-skill="css">
-            <p class="font-medium">CSS</p>
-            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-              <div class="bg-blue-500 h-3"></div>
-            </div>
-          </div>
-          <div data-skill="python">
-            <p class="font-medium">Python</p>
-            <div class="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-              <div class="bg-yellow-500 h-3"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Projects -->
-  <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-900">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-8">My Projects</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Project 1 -->
-        <div class="group bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-          <img src="images/web-project1.png" alt="Web Project" class="w-full">
-          <div class="p-4 text-left">
-            <h3 class="text-xl font-semibold">Landing Page Design</h3>
-            <p class="text-gray-600 dark:text-gray-300">Responsive landing page untuk sekolah.</p>
-            <a href="https://link-demo.com" target="_blank" class="text-indigo-600 hover:underline">View Project →</a>
-          </div>
-        </div>
+  <!-- Galeri Desain -->
+  <section id="design" class="pt-28 pb-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Kumpulan Desain</h2>
+      <p class="text-center text-gray-600 dark:text-gray-400 mb-10">
+        Koleksi karya desain saya, termasuk yang masih dalam proses pengembangan.
+      </p>
 
-        <!-- Project 2 -->
-        <div class="group bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-          <img src="images/logo1.png" alt="Logo Design" class="w-full">
-          <div class="p-4 text-left">
-            <h3 class="text-xl font-semibold">Logo Design</h3>
-            <p class="text-gray-600 dark:text-gray-300">Minimalist logo untuk brand clothing.</p>
-          </div>
-        </div>
+      <!-- Grid Galeri -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <img src="https://i.ibb.co/PzCy1T8m/dawet.jpg" 
+       alt="dawet" 
+       class="gallery-img rounded-xl shadow-lg w-full h-64 object-cover transform hover:scale-105 transition duration-300 cursor-pointer"
+       data-file="https://drive.google.com/uc?export=download&id=1c_zd1MWzcWBBH5IOQiBomDI2Ed5Qcx9U">
+       
+  <img src="https://i.ibb.co/KcxTCjTX/posterkos.jpg"
+       alt="kost" 
+       class="gallery-img rounded-xl shadow-lg w-full h-64 object-cover transform hover:scale-105 transition duration-300 cursor-pointer"
+       data-file="https://drive.google.com/file/d/1V8TSGvUfCvNCx04ld-wqGJATp3ZEj0Ks/view?usp=drive_link">
+  <img src="https://i.ibb.co/qYP0CMRV/Untitled-1.jpg"
+       alt="telur gulung" 
+       class="gallery-img rounded-xl shadow-lg w-full h-64 object-cover transform hover:scale-105 transition duration-300 cursor-pointer"
+       data-file="https://drive.google.com/file/d/1uVjRSZtbWhAlz90q-DQWXRlFnMQwYf29/view?usp=drive_link">
+</div>
 
-        <!-- Project 3 -->
-        <div class="group bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-          <img src="images/uiux.png" alt="UI/UX Design" class="w-full">
-          <div class="p-4 text-left">
-            <h3 class="text-xl font-semibold">Mobile App UI</h3>
-            <p class="text-gray-600 dark:text-gray-300">UI/UX design aplikasi e-learning.</p>
-          </div>
-        </div>
 
-      </div>
-    </div>
-  </section>
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50 flex-col">
+  <button id="closeLightbox" class="absolute top-5 right-5 text-white text-3xl">&times;</button>
 
-  <!-- Contact -->
-  <section id="contact" class="py-16 bg-white dark:bg-gray-800">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-6">Hubungi Saya</h2>
-      <p class="mb-6">Tertarik bekerja sama? Silakan hubungi saya melalui email atau sosial media.</p>
-      <a href="mailto:youremail@gmail.com" class="px-6 py-3 bg-indigo-600 text-white rounded-full shadow hover:bg-indigo-500 transition">Email Saya</a>
-    </div>
-  </section>
+  <!-- Tombol Prev -->
+  <button id="prevBtn" class="absolute left-5 text-white text-4xl px-3 py-1 hover:text-gray-300">&#10094;</button>
 
-  <!-- Scroll To Top -->
-  <button id="scrollTop" class="fixed bottom-6 right-6 bg-indigo-600 text-white p-3 rounded-full shadow hidden">
-    ↑
-  </button>
+  <img id="lightboxImg" src="" alt="Preview" class="max-w-3xl max-h-[80vh] rounded-lg shadow-lg mb-4">
 
-  <!-- Script -->
-  <script>
-    // Typed.js
-    new Typed("#typed", {
-      strings: ["Web Designer", "Graphic Designer", "UI/UX Enthusiast"],
-      typeSpeed: 80,
-      backSpeed: 50,
-      loop: true
+  <!-- Tombol Next -->
+  <button id="nextBtn" class="absolute right-5 text-white text-4xl px-3 py-1 hover:text-gray-300">&#10095;</button>
+
+  <div class="flex gap-4 mt-4">
+    <a id="downloadBtn" href="" target="_blank" class="px-6 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-500 transition">
+      Download File
+    </a>
+    <button id="backBtn" class="px-6 py-2 bg-gray-600 text-white rounded-lg shadow hover:bg-gray-500 transition">
+      Kembali
+    </button>
+  </div>
+</div>
+
+<script>
+  // Tombol kembali
+  const backBtn = document.getElementById('backBtn');
+  backBtn.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+  });
+</script>
+
+
+<script>
+  // Lightbox
+  const galleryImages = document.querySelectorAll('.gallery-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeLightbox = document.getElementById('closeLightbox');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  let currentIndex = 0; // simpan index gambar aktif
+
+  function showImage(index) {
+    const img = galleryImages[index];
+    lightboxImg.src = img.src;
+    downloadBtn.href = img.dataset.file;
+    currentIndex = index;
+  }
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      showImage(index);
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
     });
+  });
 
-    // Scroll To Top
-    const scrollTop = document.getElementById("scrollTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) {
-        scrollTop.classList.remove("hidden");
-      } else {
-        scrollTop.classList.add("hidden");
+  closeLightbox.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    }
+  });
+
+  // Next & Prev
+  nextBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    showImage(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    showImage(currentIndex);
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('hidden')) {
+      if (e.key === "ArrowRight") {
+        nextBtn.click();
+      } else if (e.key === "ArrowLeft") {
+        prevBtn.click();
+      } else if (e.key === "Escape") {
+        closeLightbox.click();
       }
-    });
-    scrollTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-  </script>
+    }
+  });
+</script>
+
 
 </body>
 </html>
