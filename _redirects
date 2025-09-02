@@ -1,0 +1,9 @@
+# Hilangkan .html di semua path
+/:file.html   /:file   301
+/:folder/:file.html   /:folder/:file   301
+
+# Index.html jadi root
+/index.html   /   301
+
+# Fallback untuk route (SPA support)
+/*   /index.html   200
