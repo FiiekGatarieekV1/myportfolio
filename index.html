@@ -39,7 +39,9 @@
         </span>
         <div class="leading-tight">
           <h1 class="text-base font-semibold">Portfolio Saya</h1>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Web Developer</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+  <span id="navRole"></span>
+</p>
         </div>
       </a>
 
@@ -193,6 +195,17 @@
         <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">80%</p>
       </div>
 
+      <!-- Canva -->
+      <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" 
+             alt="Canva" class="w-12 h-12 mx-auto">
+        <p class="mt-3 font-semibold">Canva</p>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mt-2">
+          <div class="bg-purple-600 h-2.5 rounded-full" style="width: 80%"></div>
+        </div>
+        <p class="text-sm mt-1 text-gray-600 dark:text-gray-400">80%</p>
+      </div>
+
       <!-- CorelDRAW -->
       <div class="p-6 bg-white dark:bg-slate-900 rounded-xl shadow hover:shadow-md text-center">
         <img src="images/coreldraw.png" alt="CorelDRAW" class="w-12 h-12 mx-auto">
@@ -213,9 +226,9 @@
         <h3 class="text-3xl font-bold text-center">Experience</h3>
         <div class="mt-10 space-y-6">
           <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl shadow">
-            <h4 class="font-semibold text-lg">Freelance</h4>
+            <h4 class="font-semibold text-lg">Freelance dan Mengasah Skill</h4>
             <p class="text-sm text-slate-500">2022 - Sekarang</p>
-            <p class="mt-2 text-slate-600 dark:text-slate-400">Membangun aplikasi web modern menggunakan React & Tailwind.</p>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Mencoba membuat aplikasi web modern menggunakan React & Tailwind.</p>
           </div>
           <div class="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl shadow">
             <h4 class="font-semibold text-lg">Workshop Project Kuliah - Toko Grosiran Snack Jatingaleh</h4>
@@ -385,9 +398,11 @@
   </footer>
 
   <!-- ===== SCRIPT ===== -->
+   <script src="script.js"></script>
   <!-- Typed.js -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
+  
   // Efek Ketik di Hero
   var typed = new Typed("#typed", {
     strings: [
@@ -401,7 +416,25 @@
     loop: true
   });
 </script>
+<script>
+  // Efek Ketik di Navbar (acak start)
+const roles = ["Web Developer", "Graphic Designer", "UI/UX Enthusiast"];
 
+// Pilih random index untuk start
+const startIndex = Math.floor(Math.random() * roles.length);
+
+new Typed("#navRole", {
+  strings: roles,
+  typeSpeed: 40,       // lebih pelan
+  backSpeed: 25,       // hapusnya juga pelan
+  backDelay: 2500,     // jeda lebih lama
+  loop: true,
+  startAt: startIndex, // mulai dari index random
+  smartBackspace: true // hapus hanya beda kata
+});
+
+</script>
+  
   <!-- Scroll to top -->
   <button id="scrollTop" class="fixed bottom-6 right-6 hidden bg-primary-600 text-white p-3 rounded-full shadow-lg hover:bg-primary-700">
     <i class="fa-solid fa-arrow-up"></i>
@@ -410,37 +443,51 @@
   <!-- AOS & Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ duration: 800, once: true });
+   AOS.init({ duration: 800, once: true });
 
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-    const themeToggle = document.getElementById('themeToggle');
-    const scrollTop = document.getElementById('scrollTop');
-    const html = document.documentElement;
+const menuBtn = document.getElementById('menuBtn');
+const mobileNav = document.getElementById('mobileNav');
+const themeToggle = document.getElementById('themeToggle');
+const scrollTop = document.getElementById('scrollTop');
+const html = document.documentElement;
 
-    // Mobile nav toggle
-    menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-    mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.add('hidden')));
+// Mobile nav toggle
+menuBtn?.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.add('hidden')));
 
-    // Theme toggle
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-    }
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
-    });
+// ===== THEME TOGGLE (AUTO + MANUAL) =====
+function setTheme(mode) {
+  if (mode === 'dark') {
+    html.classList.add('dark');
+    localStorage.theme = 'dark';
+  } else {
+    html.classList.remove('dark');
+    localStorage.theme = 'light';
+  }
+}
 
-    
-    // Scroll to top button
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        scrollTop.classList.remove('hidden');
-      } else {
-        scrollTop.classList.add('hidden');
-      }
-    });
-    scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+// Cek localStorage
+if (localStorage.theme) {
+  setTheme(localStorage.theme);
+} else {
+  const hour = new Date().getHours();
+  setTheme(hour >= 6 && hour < 18 ? 'light' : 'dark');
+}
+
+// Tombol toggle manual
+themeToggle?.addEventListener('click', () => {
+  setTheme(html.classList.contains('dark') ? 'light' : 'dark');
+});
+
+// Scroll to top button
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollTop.classList.remove('hidden');
+  } else {
+    scrollTop.classList.add('hidden');
+  }
+});
+scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
 </body>
 </html>
