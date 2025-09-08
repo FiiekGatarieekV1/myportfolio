@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
 
+# Blokir folder teknis (tidak perlu diindex)
+Disallow: /project/
+Disallow: /css/
+Disallow: /js/
+Disallow: /images/
+
+# Lokasi sitemap
 Sitemap: https://fiiegatariie.my.id/sitemap.xml
