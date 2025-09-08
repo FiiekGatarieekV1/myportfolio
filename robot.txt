@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://fliegatariie.my.id/sitemap.xml
