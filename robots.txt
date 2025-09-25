@@ -1,11 +1,11 @@
-User-agent: *
-Allow: /
+#User-agent: *
+#Allow: /
 
 # Blokir folder teknis (tidak perlu diindex)
-Disallow: /project/
-Disallow: /css/
-Disallow: /js/
-Disallow: /images/
+#Disallow: /project/
+#Disallow: /css/
+#Disallow: /js/
+#Disallow: /images/
 
 # Lokasi sitemap
-Sitemap: https://fiiegatariie.my.id/sitemap.xml
+#Sitemap: https://fiiegatariie.my.id/sitemap.xml
